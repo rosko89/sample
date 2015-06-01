@@ -1,6 +1,8 @@
 package com.jakim.automation.pageobects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage {
 	private WebDriver driver;
@@ -20,5 +22,10 @@ public class HomePage {
 		return SectionFactory.getNewsSection(this.driver);
 	}
 
+	public LoginPage openLoginPage() {
+		WebElement loginButton = this.driver.findElement(By.cssSelector("#lenta-login>a"));
+		loginButton.click();
+		return new LoginPage(this.driver);
+	}
 
 }
