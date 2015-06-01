@@ -25,6 +25,12 @@ public class HomePage {
 	public LoginPage openLoginPage() {
 		WebElement loginButton = this.driver.findElement(By.cssSelector("#lenta-login>a"));
 		loginButton.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new LoginPage(this.driver);
 	}
 
